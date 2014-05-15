@@ -1,6 +1,7 @@
 <?php
 class ServiceCall
 {
+    public $serviceCallname = "";
 	public $scheme = "";
 	public $url = "";
 	public $httpMethod = "";
@@ -9,18 +10,12 @@ class ServiceCall
     public $body = "";
     public $isRawBody = 0;
 
-    public function __construct($scheme, $url, $httpMethod)
+    public function __construct($serviceCallname, $scheme, $url, $httpMethod)
     {
+        $this->serviceCallname = $serviceCallname;
     	$this->scheme = $scheme;
     	$this->url = $url;
     	$this->httpMethod = $httpMethod;
     }
 }
-
- $obj = new Project("https", "api.base.com", "get");
-
- echo $obj->scheme ."<br/>";
- echo $obj->url ."<br/>";
- echo $obj->httpMethod ."<br/>";
-
 ?>
